@@ -1,0 +1,8 @@
+nomi= str(input ('Qual o seu nome?')).strip().lower()
+n= nomi.split()
+print('O seu nome tem {} letras'.format(len(nomi)))
+print('O seu nome tem {} letras A'.format(nomi.count('a')))
+print('A primeira letra A apareceu na posiçao {}'.format(nomi.find('a')+1))
+print('A ultima letra A apareceu na posiçao {}'.format(nomi.rfind('a')+1 - (nomi.count(' '))))
+print('Seu primeiro nome é {}'.format(n[0]))
+print('Seu ultimo nome é {}'.format(n[len(n)-1]))
