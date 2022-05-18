@@ -16,3 +16,10 @@ short_name= [name for name in names if len(name)<5]
 upper_name= [name.upper() for name in names if len(name)>=5]
 print(short_name)
 print(upper_name)
+
+#DICT COMPRE
+import random
+students_score= {student:random.randint(1,10) for student in names}
+passed_students= {student: score for (student, score) in students_score.items() if score>6}
+print(passed_students)
+# new_dict= {new_key: new_value for (key, value) in dict.items()if test}
