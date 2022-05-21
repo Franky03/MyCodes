@@ -36,9 +36,9 @@ def count():
         
 def show_passw():
     if checked_state.get() == 1:
-        pass_input.config(show='*')
-    else:
         pass_input.config(show='')
+    else:
+        pass_input.config(show='*')
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -90,7 +90,7 @@ web_input.focus()
 email_input= Entry(width=50)
 email_input.grid(row=2, column=1, columnspan=2)
 # email_input.insert(END, 'kaikym20@gmail.com')
-pass_input= Entry(width=32)
+pass_input= Entry(width=32, show='*')
 pass_input.grid(row=3, column=1)
 
 generate_btn= Button(text='Generate Password', command= generate)
