@@ -15,5 +15,6 @@
   * [HirstPainting (Turtle)](https://github.com/Franky03/MyCodes/blob/main/Udemy/HirstPainting.py)
   * [Turtle Race](https://github.com/Franky03/MyCodes/blob/main/Udemy/TurtleRace.py)
   * [U.S. States Game](https://github.com/Franky03/MyCodes/blob/main/Udemy/us-states-game-start/main.py)
+  * [Pomodoro Timer (Tkinter)](https://github.com/Franky03/MyCodes/blob/main/Udemy/PomodoroApp/main.py)
   * ...
 
