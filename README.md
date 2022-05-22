@@ -1,6 +1,4 @@
 # CursoPython
- My progress's repository in "Curso em Video- Python" <br/>
- Finished in 17/04/2022 <br/>
  
  Udemy/ 100DaysofCode Projects: <br/>
   * [Snake Game](https://github.com/Franky03/MyCodes/blob/main/Udemy/Snake/SnakeGame.py)
