@@ -43,9 +43,9 @@ def mp3_download():
 # ---------------------------- UI SETUP ------------------------------- #
 window= Tk()
 window.config(padx=10, pady=10, bg='white')
-window.title('Youtube Downloader')
+window.title('Youtube Converter')
 
-logo= PhotoImage(file='./Additional/download.png')
+logo= PhotoImage(file='./Files/YoutubeConverter/download.png')
 canvas= Canvas(width=200, height=200, highlightthickness=0, bg='white')
 canvas.create_image(100,100,image= logo)
 canvas.grid(column=1, row=0)
