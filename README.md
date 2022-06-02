@@ -4,7 +4,7 @@
   * [Snake Game](https://github.com/Franky03/MyCodes/blob/main/Udemy/Snake/SnakeGame.py)
   * [Pong](https://github.com/Franky03/MyCodes/blob/main/Udemy/Pong.py)
   * [Password Manager - Tkinter](https://github.com/Franky03/MyCodes/blob/main/Udemy/PasswordGenerator/main.py)
-  * [Quizz- Interface anf API](https://github.com/Franky03/MyCodes/tree/main/Udemy/quizzler-app-start)
+  * [Quizz- Interface and API](https://github.com/Franky03/MyCodes/tree/main/Udemy/quizzler-app-start)
   * [Crossy Road](https://github.com/Franky03/MyCodes/blob/main/Udemy/CrossingCapstone.py)
   * [Hangman](https://github.com/Franky03/MyCodes/blob/main/Udemy/Day7/Hangman.py)
   * [Ceasar Cipher](https://github.com/Franky03/MyCodes/blob/main/Udemy/Day8.py)
