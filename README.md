@@ -1,6 +1,7 @@
 # CursoPython
  
  Udemy/ 100DaysofCode Projects: <br/>
+  * [Weather SMS](https://github.com/Franky03/MyCodes/blob/main/Udemy/API_Key.py)
   * [Snake Game](https://github.com/Franky03/MyCodes/blob/main/Udemy/Snake/SnakeGame.py)
   * [Pong](https://github.com/Franky03/MyCodes/blob/main/Udemy/Pong.py)
   * [Password Manager - Tkinter](https://github.com/Franky03/MyCodes/blob/main/Udemy/PasswordGenerator/main.py)
