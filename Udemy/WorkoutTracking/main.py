@@ -1,8 +1,10 @@
+import os
 import requests
 from datetime import datetime
 
-API_ID= "9ba8b3b0"
-API_KEY= "0b7c9aef79a8e79bd661788782670ca7"
+API_ID= os.environ['API_ID']
+API_KEY= os.environ['API_KEY']
+TOKEN= os.environ['TOKEN']
 
 exercise= input("The exercises you did: ")
 
@@ -23,10 +25,14 @@ response= requests.post(" https://trackapi.nutritionix.com/v2/natural/exercise",
 
 data= response.json()
 
-sheet_endpoint= "https://api.sheety.co/6e3b81f17f597c3092672a4632fc3fb7/workoutTracking/workouts"
+sheet_endpoint= os.environ['SHEET_ENDPOINT']
 
 today= datetime.now().strftime("%d/%m/%Y")
 now_time = datetime.now().strftime("%X")
+
+sheet_headers= {
+    "Authorization": TOKEN
+}
 
 for exercise in data['exercises']:
     sheet_params= {
@@ -39,7 +45,7 @@ for exercise in data['exercises']:
         }
     }
 
-    sheet_response= requests.post(sheet_endpoint, json=sheet_params)
+    sheet_response= requests.post(sheet_endpoint, json=sheet_params, headers= sheet_headers)
     print(sheet_response.text)
 
 
