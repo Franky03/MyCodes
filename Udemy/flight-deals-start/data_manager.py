@@ -23,5 +23,3 @@ class DataManager:
             }
             response= requests.put(url= f"https://api.sheety.co/6e3b81f17f597c3092672a4632fc3fb7/flightDeals/prices/{city['id']}", json=new_data)
             print(response.text)
-    
-    

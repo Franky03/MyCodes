@@ -1,3 +1,4 @@
+import requests
 from data_manager import DataManager
 from datetime import datetime, timedelta
 from notification_manager import NotificationManager
@@ -30,12 +31,39 @@ def main():
             destination['iataCode'], 
             from_time= tomorrow, 
             to_time= six_months)
-        if flight== None:
+        
+        if flight == None:
             pass
+        
         else:
             if flight.price < destination["lowestPrice"]:
                 notification.send_sms(
                     message=f"Low price alert! Only £{flight.price} to fly from {flight.origin_city}-{flight.origin_airport} to {flight.destination_city}-{flight.destination_airport}, from {flight.out_date} to {flight.return_date}."
                 )
+    
+
+    first_name= input("First Name: ")
+    last_name= input("Last Name: ")
+    email= input("Email: ")
+
+    SHEET_ENDPOINT= "https://api.sheety.co/6e3b81f17f597c3092672a4632fc3fb7/flightDeals/users"
+    params={
+        "user": {
+            "firstName": first_name,
+            "lastName": last_name,
+            "email": email,
+        }
+    }
+    response= requests.post(url=SHEET_ENDPOINT, json= params)
+    print(response.text)
+
+
+#API do Sheety atingiu o limite de requests, não dá mais pra roda o código XD
 
 main()
+
+
+
+    
+
+    
