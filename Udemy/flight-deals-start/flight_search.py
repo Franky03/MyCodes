@@ -46,7 +46,8 @@ class FlightSearch:
             print(f"No flights found for {destination_city}.")
             return None
         
-        flight_data= FlightData(price= data["price"], 
+        flight_data= FlightData(
+            price= data["price"], 
             origin_city=data["route"][0]["cityFrom"],
             origin_airport=data["route"][0]["flyFrom"],
             destination_city=data["route"][0]["cityTo"],
