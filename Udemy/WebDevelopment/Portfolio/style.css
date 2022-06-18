@@ -1,14 +1,107 @@
-div.bar{
-    background-color: white;
-}
-a.name{
-    background-color: black;
+body{
+    background-color: #1A3C40;
 }
 
+.barra-lateral{
+    float: left;
+    width: 30%;
+}
+
+.img-barra-lateral{
+    position: relative;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+.my-img {
+    position:absolute;
+    top:90px;
+    left: 200px;
+    border:5px solid #EDE6DB;
+    border-radius: 360px;
+}
+
+.my-img:hover {
+    animation: bounce 1s infinite alternate;
+        -webkit-animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }
+
+
+.corpo-do-site {
+    width: 68%;
+    float: right;
+}
 
 h1, h2, h3, h4, h5, h6 {
-    color:darkslategrey;
+    color: #EDE6DB;
     font-weight: 400;
     line-height: 1em;
     margin: 0 0 1em 0;
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
 }
+p{
+    color: #EDE6DB;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+.table-projects{
+    color: #EDE6DB;
+}
+hr {
+    border: 0;
+    border-bottom: solid 2px #417D7A;
+    margin: 1em;
+}
+.my-name {
+    font-size: 3rem;
+    font-family: Copperplate, Copperplate Gothic Light, fantasy;
+    display: flex;
+    justify-content: center;
+}
+.partes, .skills{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+        
+}
+.partes:hover, .my-name:hover {
+    text-shadow: 0px 0px 100px;
+    animation: animate 2s infinite linear;
+}
+
+@keyframes animate{
+    0%,
+    100% {
+        color: #00FFAB;
+    }
+    25% {
+        color:#14C38E;
+    }
+    50% {
+        color: #B8F1B0;
+    }
+    75% {
+        color: #E3FCBF;
+    }
+}
+
+.profs{
+    display:flex;
+    justify-content: center;
+    
+}
+
+.about:hover {
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+    transform: scale(1.05);
+    
+}
+
