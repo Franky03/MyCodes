@@ -52,18 +52,23 @@ p{
 }
 .table-projects{
     color: #1A3C40;
+    display: flex;
+    justify-content: center;
 }
+
 hr {
     border: 0;
     border-bottom: solid 2px #417D7A;
-    margin: 1em;
+    margin: 2em;
 }
+
 .my-name {
     font-size: 3rem;
     font-family: Copperplate, Copperplate Gothic Light, fantasy;
     display: flex;
     justify-content: center;
 }
+
 .partes, .skills{
     display: flex;
     flex-direction: row;
@@ -98,10 +103,30 @@ hr {
     
 }
 
-.about:hover {
-    animation: c-glowing-blue .3s ease-in-out infinite;
-    animation-direction: alternate;
-    transform: scale(1.05);
+
+li {                     
+    display:block;
+    list-style-type: none;    
+    margin:0;                  
+    box-sizing: border-box; 
+                                                      
+}
+
+
+.imagem-projeto {
+    width: 40%;
+    border-radius: 20px;
+    margin: 20px;
     
 }
 
+.imagem-projeto:nth-child(odd){
+    float: left;
+}
+
+
+.imagem-projeto:hover{
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+    transform: scale(1.10);
+}
