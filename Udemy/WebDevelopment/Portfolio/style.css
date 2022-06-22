@@ -1,3 +1,11 @@
+html, body, ul {      /* aqui o que importa é o UL, o resto é pra estética do demo.          */
+    position:relative;  /* reset do position, não relacionado ao demo, mas bom pra uso geral.  */
+    margin:0;           /* Zeramos as margens e o padding do UL para as células.encostarem     */
+    padding:0;
+    width:100%;         /* por default, os blocos são 100%, mas vamos garantir isso.           */
+    height:100%;        /* aqui foi feito pra fins de demonstração apenas.                     */
+  }
+
 body{
     background-color: #EDE6DB;
 }
@@ -103,25 +111,29 @@ hr {
     
 }
 
+ul{
+    left: 40px;
+}
 
 li {                     
     display:block;
     list-style-type: none;    
     margin:0;                  
     box-sizing: border-box; 
-                                                      
+    height: 25%;                       
 }
 
+li:nth-child(odd) {          /* este css será aplicato nos LI impares (1, 3, 5... ).         */
+    clear:both;                /* forçamos a quebra de linha por segurança...                  */
+    float:left;                /* ... e o alinhamos à esquerda.                                */
+    width:50%;                 /* Aplicamos 50% na esquerda, os da direita "herdam" o resto.   */
+  }
 
 .imagem-projeto {
-    width: 40%;
+    width: 400px;
     border-radius: 20px;
     margin: 20px;
     
-}
-
-.imagem-projeto:nth-child(odd){
-    float: left;
 }
 
 
