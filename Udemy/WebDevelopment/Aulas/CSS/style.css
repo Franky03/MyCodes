@@ -1,3 +1,25 @@
 body {
-    background-color: blue;
+    background-color: white;
+}
+
+.top-container {
+    width: 200px;
+    height: 200px;
+    border: solid 10px black;
+    padding: 20px;
+}
+
+.middle-container{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: solid 20px black;
+    margin-left: 260px;
+}
+.bottom-container{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    border: solid 10px black;
+    margin-left: 500px;
 }
