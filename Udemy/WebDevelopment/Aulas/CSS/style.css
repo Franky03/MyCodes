@@ -1,25 +1,57 @@
 body {
-    background-color: white;
+    background-color: #EFFFFD;
+    margin: 0;
+    text-align: center;
+}
+
+h1{
+    width: 10%;
+    margin: 0 auto 0 auto;
+
+}
+.sla{
+    position: relative;
+    top: 100px;
 }
 
 .top-container {
     width: 200px;
     height: 200px;
-    border: solid 10px black;
-    padding: 20px;
+    background-color: red;
+    position: absolute;
+    left: 400px;
 }
 
 .middle-container{
+    
     width: 200px;
     height: 200px;
-    background-color: red;
-    border: solid 20px black;
-    margin-left: 260px;
+    background-color: blue;
+    position: absolute;
+    left: 200px;
+    
 }
 .bottom-container{
+    
     width: 200px;
     height: 200px;
+    position: absolute;
     background-color: yellow;
-    border: solid 10px black;
-    margin-left: 500px;
+    
+}
+
+.bottom-cloud {
+    position: absolute;
+    top: 200px;
+}
+
+.top-cloud{
+    position: absolute;
+    top: 40px;
+    right: 500px;
+}
+
+.mount{
+    position: relative;
+    top: 200px;
 }

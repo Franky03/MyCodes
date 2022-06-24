@@ -10,13 +10,18 @@ body{
     background-color: #EDE6DB;
 }
 
-.topo {
+.topo{
     height: 45px;
     background-color: #417D7A;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
-
+.main{
+    margin-top: 45px;
+}
 .barra-lateral{
-    float: left;
     width: 30%;
 }
 
@@ -28,8 +33,8 @@ body{
 }
 .my-img {
     position:absolute;
-    top:90px;
-    left: 200px;
+    top:20px;
+    left: 180px;
     border:5px solid #EDE6DB;
     border-radius: 360px;
 }
@@ -49,9 +54,11 @@ body{
 
 
 .corpo-do-site {
+    display: inline-block;
     padding-top: 50px;
+    position: relative;
+    bottom: 250px;
     width: 68%;
-    float: right;
 }
 
 h1, h2, h3, h5, h6 {
@@ -88,6 +95,7 @@ hr {
     font-family: Copperplate, Copperplate Gothic Light, fantasy;
     display: flex;
     justify-content: center;
+    
 }
 
 .partes, .skills{
