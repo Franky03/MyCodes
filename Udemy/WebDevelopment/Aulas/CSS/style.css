@@ -49,10 +49,20 @@ a{
     position: relative;
     top: 100px;
 }
-.middle-container{
-    margin-top: 200px;
-    background-color: white;
+.container{
+    height: 580px;
 }
+
+.intro{
+    width: 30%;
+    margin: auto;
+}
+.middle-container{
+    margin: 200px 0;
+    background-color: white;
+
+}
+
 
 .skill-row{
     width: 50%;
@@ -90,7 +100,7 @@ a{
     -webkit-border-radius: 8;
     -moz-border-radius: 8;
     border-radius: 8px;
-    font-family: Arial;
+    font-family: 'Montserrat', sans-serif;
     color: #ffffff;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
@@ -129,18 +139,18 @@ p{
     margin: 100px auto 0px auto;
     background-color: #66BFBF;
     height: 150px;
+    padding: 50px 0 20px;
 }
 
 .final-name{
     color: #EAF6F6;
-    position: relative;
-    top: 80px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 .footer-link{
-    display: inline-block;
-    margin: auto 20px auto 20px;
-    position: relative;
-    top: 50px;
     text-decoration: none;
+    padding: 20px;
+}
+
+.footer-link:hover{
+    color: #EAF6F6;
 }
