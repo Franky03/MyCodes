@@ -2,43 +2,23 @@ body {
     background-color: #EFFFFD;
     margin: 0;
     text-align: center;
+    font-family: 'Merriweather', serif;
 }
 
 h1{
     width: 10%;
     margin: 0 auto 0 auto;
-
+    font-family: 'Sacramento', cursive;
 }
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .sla{
     position: relative;
     top: 100px;
 }
 
-.top-container {
-    width: 200px;
-    height: 200px;
-    background-color: red;
-    position: absolute;
-    left: 400px;
-}
-
-.middle-container{
-    
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    position: absolute;
-    left: 200px;
-    
-}
-.bottom-container{
-    
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    background-color: yellow;
-    
-}
 
 .bottom-cloud {
     position: absolute;
