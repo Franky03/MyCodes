@@ -1,50 +1,84 @@
+from pprint import pprint
 from tkinter import *
 from bs4 import BeautifulSoup
 import requests
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import spotipy.util as util
-import json
+from tkinter import messagebox
 
-SPOT_CLI= ""
-SPOT_KEY= "" #The Key will be reseted after i commit
-SPOT_URI= ""
+SPOT_CLI= "your-client-id"
+SPOT_KEY= "your-client-secret" 
+SPOT_URI= "your-uri-redirect"
 
 scope= "playlist-modify-private"
-username=""
+username="your-username"
 
 def playlist():
     global scope, username
 
-    data= date.get()
-    response = requests.get(f"https://www.billboard.com/charts/hot-100/{data}/").text
-    soup= BeautifulSoup(response, 'html.parser')
-    titles= soup.find_all("h3", id="title-of-a-story", class_="a-font-primary-bold-s")
-    songs= [song.getText().replace('\n', '').replace('\t', '') for song in titles ]
-    for song in songs:
-        if song!="Producer(s):" and song!='Imprint/Promotion Label:' and song!='Songwriter(s):':
-            print(f"{song}\n")
+    try:
+        data= date.get()
+        name_pl= playlist_name.get()
+        descr_pl= play_descr.get(1.0, END)
 
-    #Spotify ascess
+        if len(data)==0 or len(name_pl)==0:
+            messagebox.showinfo(title='Oops', message="Please don't leave the first two fields empty!")
+
+        else:
+            response = requests.get(f"https://www.billboard.com/charts/hot-100/{data}/").text
+            soup= BeautifulSoup(response, 'html.parser')
+            titles= soup.find_all("h3", id="title-of-a-story", class_="a-font-primary-bold-s")
+            songs= [song.getText().replace('\n', '').replace('\t', '') for song in titles ]
+            for song in songs:
+                print(f"{song}\n")
+
+            #Spotify ascess
+                    
+            token= SpotifyOAuth(
+                scope=scope, 
+                username= username, 
+                client_id=SPOT_CLI, 
+                client_secret=SPOT_KEY, 
+                cache_path="./Udemy/TimeMachine/src/token.txt", 
+                redirect_uri=SPOT_URI
+                )  #Para criar o token tem que passar os paramêtros acima
+
+                # Então cria um spotify object para executar as ações passando o token como parametro
+
+            spotObject= spotipy.Spotify(auth_manager= token)
             
-    token= SpotifyOAuth(
-        scope=scope, 
-        username= username, 
-        client_id=SPOT_CLI, 
-        client_secret=SPOT_KEY, 
-        cache_path="./Udemy/TimeMachine/src/token.txt", 
-        redirect_uri=SPOT_URI
-        )
+            user_id = spotObject.current_user()["id"]
 
-    spotObject= spotipy.Spotify(auth_manager= token)
-    
-    user_id = spotObject.current_user()["id"]
-    print(user_id)
+            #Procurando as músicas
 
-    
+            songs_uri=[]
+            year= data.split('-')[0] #Pegar o ano com split
+            for s in songs:
+                result= spotObject.search(q=f'track:{s} year:{year}', type="track") # metodo search com a query (o que voce quer pesquisar) e o tipo da search
+                try: # tentar pegar a uri e adicionar na lista
+                    uri= result['tracks']['items'][0]['uri']
+                    songs_uri.append(uri)
+                except: # se não achar a track é pq não existe no spotify
+                    print(f"{s} doesn't exist in Spotify. Skipped.")
+            
+            #Criando a Playlist
 
 
+            if descr_pl=='':
+                descr_pl= None
 
+            playlist= spotObject.user_playlist_create(user= username, name= name_pl, public=False, description= descr_pl)
+
+            #Adicionando as músicas
+
+            spotObject.playlist_add_items(playlist_id= playlist['id'], items= songs_uri[1:])
+
+            #Avisar quando terminar
+
+            messagebox.showinfo(title="let's listen", message="The playlist has been created, go listen to it on your spotify.")
+
+    except:
+        messagebox.showinfo(title='Oops', message="Something went wrong, please check the inputs and try again.")
 
 #Body
 screen= Tk()
@@ -70,7 +104,7 @@ playlist_name= Entry(width=30, justify="center")
 playlist_name.grid(column=1, row=5)
 
 
-descr_label= Label(text="Playlist's description:", font= ('Arial', 10))
+descr_label= Label(text="Playlist's description:\n(Optional)", font= ('Arial', 10))
 descr_label.grid(column=1, row=6)
 play_descr= Text(screen, height = 4, width = 30)
 play_descr.grid(column=1, row=7)
