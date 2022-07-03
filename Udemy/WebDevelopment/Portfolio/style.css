@@ -24,12 +24,12 @@ body{
     position: relative;
     opacity: 0.8;
     border-radius: 0px 5px 5px 0px;
-    height: 1525px;
+    height: 1520px;
     float: left;
 }
 .my-img {
     position:absolute;
-    top:50px;
+    top:60px;
     left: 180px;
     border:5px solid #EDE6DB;
     border-radius: 360px;
@@ -92,7 +92,7 @@ hr {
     top: 300px;
     left: 80px;
     color: #fff;
-    background: linear-gradient(271deg,#06283D 30%,#1363DF 50%,#47B5FF 70%,#06283D 94%);
+    background: linear-gradient(271deg,#fff 30%,#1363DF 50%,#47B5FF 70%,#fff 94%);
     background-clip: none;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -168,7 +168,7 @@ li:nth-child(odd) {          /* este css será aplicato nos LI impares (1, 3, 5.
     position: absolute;
     top: 350px;
     left: 150px;
-    color: #06283D;
+    color: #fff;
 }
 
 .top-about{
