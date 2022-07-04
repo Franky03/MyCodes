@@ -16,18 +16,18 @@ soup= BeautifulSoup(response.text, 'lxml') #Usar o .content ou .text para obter 
 price= float(soup.find("span", class_="a-offscreen").get_text().split("R$")[1].replace(',','.'))
 print(price)
 
-# if price<=250.0:
-title= soup.find("span", id= "productTitle").get_text().strip()
-print(title)
+if price<=250.0:
+  title= soup.find("span", id= "productTitle").get_text().strip()
+  print(title)
 
-my_email= "aulapython@yahoo.com"
-my_password= "cemdiascode"
+  my_email= "aulapython@yahoo.com"
+  my_password= "rgjbetpmvlhhqznv"
 
-message=f"Subject:Amazon Price Arlet!!\n\n{title}\nR${price}\n{url}"
+  mensagem= f"Subject:Amazon Price Arlet!!\n\n{title}\nR${price}\n{url}"
+  mensagem= mensagem.encode("utf-8")
 
-with smtplib.SMTP('smtp.mail.yahoo.com') as connection:
-    connection.starttls()
-    result= connection.login(user=my_email, password=my_password)
-    connection.sendmail(from_addr=my_email, to_addrs= "pythonaula04@gmail.com", msg= message) 
 
-#SMTP LIB NOT WORKING WITH GMAIL ANYMORE
+  with smtplib.SMTP('smtp.mail.yahoo.com', port=587) as connection:
+      connection.starttls()
+      connection.login(my_email, my_password)
+      connection.sendmail(my_email, "pythonaula04@gmail.com", msg= mensagem)
