@@ -24,7 +24,7 @@ if price<=260.0:
     my_email= "aulapython@yahoo.com"
     my_password= "rgjbetpmvlhhqznv"
 
-    mensagem= f"Subject:Amazon Price Arlet!!\n\n{title}\nR${price}\n{url}"
+    mensagem= f"Subject:Price Arlet!!\n\n{title}\nR${price}\n{url}"
     mensagem= mensagem.encode("utf-8")
 
 
