@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 options= webdriver.ChromeOptions()
 options.add_argument("--headless")
@@ -18,6 +19,9 @@ print(articles.tag_name)
 bar= driver.find_element(By.XPATH, '//*[@id="searchInput"]')
 bar.click()
 bar.send_keys("Superman")
+# bar.send_keys(Keys.ENTER) press enter
 bar.submit()
 
-driver.quit()
+driver.find_element(By.LINK_TEXT, "DC Comics").click()
+
+# driver.quit()
