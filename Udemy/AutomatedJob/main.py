@@ -89,7 +89,9 @@ for job in jobs:
         print(finish)
         finish[1].click()
         
-    
+        close= driver.find_element(By.CLASS_NAME, '.artdeco-modal button')
+        close.click()
+        
     except:
         print("No application button, skipped.")
         continue
