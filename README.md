@@ -2,6 +2,7 @@
  
  Udemy/ 100DaysofCode Projects: <br/>
   * [Create Spotify Playlist with Top100 of a Week](https://github.com/Franky03/MyCodes/blob/main/Udemy/TimeMachine/main.py)
+  * [Tinder Bot](https://github.com/Franky03/MyCodes/tree/main/Udemy/TinderBot)
   * [10FastFingers Automated (Selenium)](https://github.com/Franky03/MyCodes/blob/main/Udemy/Selenium/tenfast.py)
   * [Weather SMS](https://github.com/Franky03/MyCodes/blob/main/Udemy/API_Key.py)
   * [Snake Game](https://github.com/Franky03/MyCodes/blob/main/Udemy/Snake/SnakeGame.py)
