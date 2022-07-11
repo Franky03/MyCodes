@@ -35,7 +35,7 @@ base_window = driver.window_handles[0]
 driver.switch_to.window(base_window)
 print(driver.title)
 
-sleep(5)
+sleep(8)
 permitir= driver.find_element(By.XPATH, '//*[@id="q1569938320"]/div/div/div/div/div[3]/button[1]/span')
 permitir.click()
 sleep(1)
@@ -49,6 +49,22 @@ sleep(5)
 for n in range(80):
     sleep(2)
     try:
+        fechar_match= driver.find_element(By.XPATH, '//*[@id="q-666276699"]/div/div/div[1]/div/div[4]/button')
+        fechar_match.click()
+        sleep(1)
+    
+    except:
+        pass
+
+    try:
+        nao_interesse= driver.find_element(By.XPATH, '//*[@id="q1569938320"]/div/div/div[2]/button[2]')
+        nao_interesse.click()
+        sleep(1)
+
+    except:
+        pass
+
+    try:
         print('called')
         X= driver.find_element(By.XPATH, '//*[@id="q-996647900"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[5]/div/div[4]/button')
         X.click()
@@ -58,18 +74,5 @@ for n in range(80):
         X= driver.find_element(By.XPATH, '//*[@id="q-996647900"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[4]/button')
         X.click()
 
-    try:
-        fechar_match= driver.find_element(By.XPATH, '//*[@id="q-666276699"]/div/div/div[1]/div/div[4]/button')
-        fechar_match.click()
-        sleep(1)
     
-    except:
-        pass
         
-
-
-    
-    
-    
-
-
