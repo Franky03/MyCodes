@@ -4,8 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 options= webdriver.ChromeOptions()
-# options.add_argument("--headless")
-# options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
 chrome_driver_path= "C:\Development\chromedriver.exe"
 driver= webdriver.Chrome(executable_path= chrome_driver_path, options= options)
@@ -23,9 +21,9 @@ print(driver.title)
 driver.switch_to.window(facebook)
 
 sleep(2)
-driver.find_element(By.XPATH, '//*[@id="email"]').send_keys('pythonaula04@gmail.com')
+driver.find_element(By.XPATH, '//*[@id="email"]').send_keys('YOUR FACEBOOK EMAIL')
 sleep(1)
-driver.find_element(By.XPATH, '//*[@id="pass"]').send_keys('cemdiascode')
+driver.find_element(By.XPATH, '//*[@id="pass"]').send_keys('YOUR FACEBOOK PASSWORD')
 sleep(1)
 driver.find_element(By.XPATH, '//*[@id="loginbutton"]').click()
 sleep(1)
@@ -75,4 +73,6 @@ for n in range(80):
         X.click()
 
     
-        
+driver.quit()
+
+print('FINISH')
