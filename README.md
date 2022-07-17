@@ -5,6 +5,7 @@
   * [Instagram Bot](https://github.com/Franky03/MyCodes/tree/main/Udemy/InstaBot)
   * [Tinder Bot](https://github.com/Franky03/MyCodes/tree/main/Udemy/TinderBot)
   * [Twitter Bot](https://github.com/Franky03/MyCodes/tree/main/Udemy/TwitterBot)
+  * [Data Entry (Selenium and bs4)](https://github.com/Franky03/MyCodes/tree/main/Udemy/DataEntry)
   * [10FastFingers Automated (Selenium)](https://github.com/Franky03/MyCodes/blob/main/Udemy/Selenium/tenfast.py)
   * [Weather SMS](https://github.com/Franky03/MyCodes/blob/main/Udemy/API_Key.py)
   * [Snake Game](https://github.com/Franky03/MyCodes/blob/main/Udemy/Snake/SnakeGame.py)
