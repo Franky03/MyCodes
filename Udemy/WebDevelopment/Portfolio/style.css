@@ -154,7 +154,7 @@ li:nth-child(odd) {          /* este css será aplicato nos LI impares (1, 3, 5.
     width: 400px;
     border-radius: 20px;
     margin: 20px;
-    
+
 }
 
 
@@ -163,6 +163,7 @@ li:nth-child(odd) {          /* este css será aplicato nos LI impares (1, 3, 5.
     animation-direction: alternate;
     transform: scale(1.10);
 }
+
 
 .about{
     position: absolute;
