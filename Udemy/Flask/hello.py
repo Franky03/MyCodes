@@ -1,41 +1,26 @@
+from tkinter import Tk
 from flask import Flask, render_template
 import time
 
-#Python Decorator Function
-
-# def decorator(function):
-#     def wrapper_function():
-#         time.sleep(2)
-#         #Do something before
-#         function()
-#         function()
-#         #Do something after
-#     return wrapper_function
-
-# @decorator
-# def say_hello():
-#     print("Hello")
-
-# say_hello()
-
-# def say_bye():
-#     print("Bye")
-
-# say_bye()
 
 app = Flask(__name__, template_folder="C:/Users/kaiky/OneDrive/Documentos/GitHub/MyCodes/Udemy/WebDevelopment/Portfolio")
 
+
 @app.route("/")
 def hello():
-    return "<h1>Hello</h1>"
+    return "<a href='/username/Franky'>Franky</a><br><a href='/bye/5/6'>Bye</a><br><a href='/index'>Index</a>"
 
 @app.route("/index")
 def index():
     return render_template("test.html")
 
-@app.route("/bye")
-def say_bye():
-    return "<p>Bye</p>"
+@app.route("/bye/<int:n1>/<int:n2>")
+def say_bye(n1, n2):
+    return f"{n1}+{n2}= {n1+n2}"
+
+@app.route("/username/<name>")
+def name(name):
+    return f"<h1>Hello {name}</h1>"
 
 if __name__== "__main__":   
-    app.run()
+    app.run(debug=True)

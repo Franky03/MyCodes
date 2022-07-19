@@ -22,3 +22,25 @@ def slow_function():
 
 fast_function()
 slow_function()
+
+#Python Decorator Function
+
+def decorator(function):
+    def wrapper_function():
+        time.sleep(2)
+        #Do something before
+        function()
+        function()
+        #Do something after
+    return wrapper_function
+
+@decorator
+def say_hello():
+    print("Hello")
+
+say_hello()
+
+def say_bye():
+    print("Bye")
+
+say_bye()
