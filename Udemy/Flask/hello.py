@@ -20,7 +20,9 @@ def say_bye(n1, n2):
 
 @app.route("/username/<name>")
 def name(name):
-    return f"<h1>Hello {name}</h1>"
+    return f"<h1>Hello {name}</h1>"\
+            "<img src='https://media.giphy.com/media/38U60fvIfokjC/giphy.gif'>"\
+            "<h1>GO OUT</h1>"
 
 if __name__== "__main__":   
     app.run(debug=True)
