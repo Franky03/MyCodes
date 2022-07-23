@@ -8,8 +8,7 @@ opt=0
 
 @app.route("/")
 def init():
-    print(opt)
-    return render_template("index.html", opt= opt)
+    return render_template("index.html")
 
 
 @app.route("/", methods = ['POST'])
@@ -22,14 +21,20 @@ def test():
     print(num, type(num))
 
     opt=num['number']
-    print(opt)
 
-    return redirect(f'/{opt}')
+    return opt
 
+random_number= randint(0, 9)
+print(random_number)
 
-@app.route(f"/{opt}")
-def menor():
-    return render_template(f"maior.html")
+@app.route("/<int:num>")
+def menor(num):
+    if num>random_number:
+        return render_template("maior.html")
+    elif num<random_number:
+        return render_template("menor.html")
+    else:
+        return render_template("igual.html")
 
 
 if __name__== "__main__":

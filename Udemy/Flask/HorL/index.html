@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        
         function getJson() {
             const number= document.querySelector(".inp-name").value;
 
@@ -18,11 +19,21 @@
                 type: "POST",
                 contentType: "application/json",
                 data: JSON.stringify(s)});
+
+            const a= document.querySelector("#meu-link");
+            a.href= number
+            
 }
     </script>
     <style>
 
+        body{
+            background-color: black;
+        }
+
         .title {
+            color: whitesmoke;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             text-align: center;
             position: relative;
             top: 100px;
@@ -39,6 +50,41 @@
             position: relative;
             top: 120px;
         }
+
+        .btn {
+            background: #1631b8;
+            background-image: -webkit-linear-gradient(top, #1631b8, #1b93de);
+            background-image: -moz-linear-gradient(top, #1631b8, #1b93de);
+            background-image: -ms-linear-gradient(top, #1631b8, #1b93de);
+            background-image: -o-linear-gradient(top, #1631b8, #1b93de);
+            background-image: linear-gradient(to bottom, #1631b8, #1b93de);
+            -webkit-border-radius: 20;
+            -moz-border-radius: 20;
+            border-radius: 20px;
+            font-family: Courier New;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #8b14e0;
+            background-image: -webkit-linear-gradient(top, #8b14e0, #0099ff);
+            background-image: -moz-linear-gradient(top, #8b14e0, #0099ff);
+            background-image: -ms-linear-gradient(top, #8b14e0, #0099ff);
+            background-image: -o-linear-gradient(top, #8b14e0, #0099ff);
+            background-image: linear-gradient(to bottom, #8b14e0, #0099ff);
+            text-decoration: none;
+        }
+
+        .inp-name{
+            margin: 10px auto 10px auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+
     </style>
 
     <title>Higher or Lower</title>
@@ -50,7 +96,8 @@
     </div>
     <div class="number">
         <input class="inp-name" type="text">
-        <a href="{{ opt }}"><button onclick="getJson()">Try</button></a>
+        <br>
+        <a id="meu-link" href=""><button class="btn" onclick="getJson()">Try</button></a>
     </div>
     
 
