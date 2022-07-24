@@ -2,7 +2,7 @@ from random import randint
 from flask import Flask, redirect, render_template, request
 import json
 
-app= Flask(__name__, template_folder="C:/Users/kaiky/OneDrive/Documentos/GitHub/MyCodes/Udemy/Flask/HorL")
+app= Flask(__name__)
 opt=0
 
 
