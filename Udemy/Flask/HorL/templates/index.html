@@ -22,7 +22,17 @@
 
             const a= document.querySelector("#meu-link");
             a.href= number
-            
+        
+
+        function refrPage(){
+            var btn= document.querySelector(".refresh");
+
+            btn.addEventListener("click", function() {
+                    location.reload();
+                });
+        }
+        
+
 }
     </script>
     <style>
@@ -48,7 +58,7 @@
         .number {
             text-align: center;
             position: relative;
-            top: 120px;
+            top: 100px;
         }
 
         .btn {
@@ -85,6 +95,13 @@
             font-size: 15px;
         }
 
+        .refresh{
+            text-align: right;
+            position: relative;
+            top: 90px;
+            margin-top: 10px;
+        }
+
     </style>
 
     <title>Higher or Lower</title>
@@ -99,7 +116,9 @@
         <br>
         <a id="meu-link" href=""><button class="btn" onclick="getJson()">Try</button></a>
     </div>
-    
+    <div class="refresh">
+        <a id="meu-link" href=""><button class="btn" onclick="refrPage()">Refresh Number</button></a>
+    </div>
 
 </body>
 </html>

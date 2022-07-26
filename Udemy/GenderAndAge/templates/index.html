@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <script>
+
+         function getName() {
+            const name= document.querySelector(".name").value;
+            const a= document.querySelector("#meu-link");
+            a.href= `guess/${name}`;
+            }
+
+        </script>
+    <title>Guess</title>
+</head>
+<body>
+    <div class="all">
+        <h1>Say Your Name</h1>
+        <input class="name" type="text">
+        <br>
+        <a id="meu-link" href=""><button onclick="getName()" class="link">Guess</button></a>
+    </div>
+
+</body>
+</html>

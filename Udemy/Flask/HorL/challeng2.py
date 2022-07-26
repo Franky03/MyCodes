@@ -8,6 +8,9 @@ opt=0
 
 @app.route("/")
 def init():
+    global random_number
+    random_number= randint(0, 9)
+    print(random_number)
     return render_template("index.html")
 
 
@@ -24,8 +27,6 @@ def test():
 
     return opt
 
-random_number= randint(0, 9)
-print(random_number)
 
 @app.route("/<int:num>")
 def menor(num):
