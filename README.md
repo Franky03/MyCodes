@@ -2,6 +2,8 @@
  
  Udemy/ 100DaysofCode Projects: <br/>
   * [Create Spotify Playlist with Top100 of a Week](https://github.com/Franky03/MyCodes/blob/main/Udemy/TimeMachine/main.py)
+  * [Guess The Number (Flask and JavaScript)](https://github.com/Franky03/MyCodes/tree/main/Udemy/Flask/HorL)
+  * [Guessing Gender and Age (Flask)](https://github.com/Franky03/MyCodes/tree/main/Udemy/GenderAndAge)
   * [Instagram Bot](https://github.com/Franky03/MyCodes/tree/main/Udemy/InstaBot)
   * [Tinder Bot](https://github.com/Franky03/MyCodes/tree/main/Udemy/TinderBot)
   * [Twitter Bot](https://github.com/Franky03/MyCodes/tree/main/Udemy/TwitterBot)
