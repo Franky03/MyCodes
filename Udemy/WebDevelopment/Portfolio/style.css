@@ -158,13 +158,6 @@ li:nth-child(odd) {          /* este css será aplicato nos LI impares (1, 3, 5.
 }
 
 
-.imagem-projeto:hover{
-    animation: c-glowing-blue .3s ease-in-out infinite;
-    animation-direction: alternate;
-    transform: scale(1.10);
-}
-
-
 .about{
     position: absolute;
     top: 350px;
