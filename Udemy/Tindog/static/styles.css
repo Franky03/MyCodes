@@ -1,0 +1,18 @@
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color: #FFFFFF;
+}
+
+#title {
+    background-color: #FF0063;
+}
+
+.container-fluid{
+    padding: 3% 15%;
+}
+
+.logo{
+    font-family: 'Ubuntu';
+}
