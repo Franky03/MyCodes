@@ -10,6 +10,13 @@ h1{
     font-weight: 900;
 }
 
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
 #title {
     background-color: #FF0063;
     color: #FFFFFF;
@@ -60,4 +67,79 @@ h1{
 .img-div{
     position: relative;
     text-align: right;
+}
+
+/* Features */
+
+#features{
+    background-color: #FFFFFF;
+    padding: 7% 15%;
+    text-align: center;
+}
+
+.fa-solid{
+    color: #ef8172;
+    margin-bottom: 1rem;
+}
+.fa-solid:hover{
+    color: #FF0063;
+}
+
+#features p{
+    color: #8f8f8f;
+    font-weight: 300;
+}
+
+#features h3{
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Testemunial Section  */
+
+#testimonials{
+    text-align: center;
+    background-color: #EC255A;
+    color: #FFFFFF;
+}
+
+.carousel-item{
+    padding: 7% 15%;
+}
+
+.test-img{
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+#press {
+    background-color: #EC255A;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.press-logo {
+    width: 15%;
+    margin: 20px 20px 50px;
+}
+
+/* Card */
+
+#pricing{
+    padding: 100px;
+    text-align: center;
+}
+
+/* .carta{
+    padding: 2%;
+    font-family: "Montserrat";
+    font-weight: 300;
+    
+} */
+
+.pricing-col{
+    padding: 3% 2%;
+    
 }
