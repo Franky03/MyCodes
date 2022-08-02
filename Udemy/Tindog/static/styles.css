@@ -66,6 +66,7 @@ h2 {
     right: 10%;
 }
 
+
 .img-div{
     position: relative;
     text-align: right;
@@ -155,4 +156,20 @@ h2 {
 .pricing-col p{
     font-family: "Montserrat";
     font-weight: 300;
+}
+
+@media (max-width: 1200px){
+    #title{
+        text-align: center;
+    }
+
+
+    .title-img{
+        position: static;
+        transform: rotate(0);
+    }
+
+    .img-div{
+        text-align: center;
+    }
 }

@@ -1,0 +1,19 @@
+h1{
+    font-size: 30px;
+}
+
+@media (min-width: 900px){
+h1{
+    font-size: 60px;
+}
+
+}
+h2{
+    font-size: 30px;
+}
+
+@media (min-width: 900px) and (max-width: 1000px){
+    h2{
+        font-size: 60px;
+    }
+}
