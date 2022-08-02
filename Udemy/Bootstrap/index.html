@@ -10,7 +10,7 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="">tindog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -134,9 +134,42 @@
       <div class="card-footer">
         Card Footer
       </div>
+    </div> -->
+
+    
+    <!-- Z-Index -->
+
+    <div class="red zd" style="border: 1px solid; height: 100px; width: 100px; background-color: red;">
+      Red
+    </div>
+    <div class="yellow zd" style="border: 1px solid; height: 100px; width: 100px; background-color: yellow;">
+      Yellow
+    </div> 
+    <div class="blue zd" style="border: 1px solid; height: 100px; width: 100px; background-color: blue;">
+      Blue
     </div>
 
+    <style>
+      .zd{
+        
+      }
+      .yellow{
+        top: 20px;
+        left: 20px;
+        position: absolute;
+        z-index: 10;
+      }
 
+      .blue{
+        top: 40px;
+        left: 40px;
+        z-index: 1;
+      }
+      .red{
+        position: absolute;
+        z-index: 1;
+      }
+    </style>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

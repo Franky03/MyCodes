@@ -23,7 +23,7 @@ h2 {
 }
 
 .container-fluid{
-    padding: 3% 15%;
+    padding: 3% 15% 10%;
 }
 
 .title-font{
@@ -62,6 +62,8 @@ h2 {
 .title-img{
     width: 60%;
     transform: rotate(25deg);
+    position: absolute;
+    right: 10%;
 }
 
 .img-div{
@@ -75,6 +77,12 @@ h2 {
     background-color: #FFFFFF;
     padding: 7% 15%;
     text-align: center;
+    position: relative;
+    
+}
+
+.feature-box {
+    padding: 4.5%;
 }
 
 .fa-solid{
@@ -142,4 +150,9 @@ h2 {
 .pricing-col{
     padding: 3% 2%;
     
+}
+
+.pricing-col p{
+    font-family: "Montserrat";
+    font-weight: 300;
 }
