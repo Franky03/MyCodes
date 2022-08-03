@@ -173,3 +173,45 @@ h2 {
         text-align: center;
     }
 }
+
+/* Call to Action */
+
+#cta{
+    background-color: #EC255A;
+    padding: 7% 15%;
+    text-align: center;
+}
+
+#cta h3{
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+/* Footer */
+
+#footer{
+    padding: 5%;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+#footer p{
+    font-family: "Montserrat";
+    font-weight: 300;
+    margin: 15px;
+}
+
+#footer i{
+    color: black;
+    margin: 20px 10px;
+}
+
+@media (max-width: 900px){
+    #cta h3{
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+}
