@@ -1,0 +1,57 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+  {{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'styles.css') }}">
+{% endblock %}
+
+
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+	  <table class="table">
+          <thead>
+            <!-- Na Table Head coloquei os indices de cada coluna e passei apenas a primeira lista(linha) do csv -->
+
+            <tr>
+              {% for name in rows[0] %}
+                <th scope="col">{{ name }}</th>
+              {% endfor %}
+            </tr>
+            
+          </thead>
+          <tbody>
+            <!-- No Table Body coloquei um for a partir da segunda lista(linha) para pegar os itens das colunas -->
+            
+            {% for row in rows[1:] %}
+            <tr>
+              {% for name in row %}
+                <!-- Se o item começar com http ent vai levar uma anchor tag no td -->
+
+                {% if name[:4] == 'http' %} 
+                  <td><a href="{{ name }}">Maps Link</a></td>
+                {% else %}
+                  <td>{{ name }}</td>
+                {% endif %}
+                
+              {% endfor %}
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+  	  </table>
+
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
