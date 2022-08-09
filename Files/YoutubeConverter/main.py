@@ -38,7 +38,7 @@ def mp3_download():
             url_input.delete(0, END)
         
         except:
-            messagebox.showinfo(title='Failed :(', message='Unfortunately the video was not downloaded, please try again.')
+            messagebox.showinfo(title='Failed :(', message='Unfortunately the music was not downloaded, please try again.')
 
 # ---------------------------- UI SETUP ------------------------------- #
 window= Tk()
