@@ -89,7 +89,7 @@ def add():
     if form.validate_on_submit():
         movie_title= form.title.data
         #usando a api do the movie db
-        response= requests.get('https://api.themoviedb.org/3/search/movie', params={'api_key': 'f49c37daac434354e7db8f0537ff98fa', 'query': movie_title, 'include_adult': True})
+        response= requests.get('https://api.themoviedb.org/3/search/movie', params={'api_key': 'MY_API_KEY', 'query': movie_title, 'include_adult': True})
         data= response.json()['results']
         #É nessa parte que será renderizado uma nova página, a de seleção dos filmes encontrados da api
         return render_template('select.html', data=data)
@@ -101,7 +101,7 @@ def find_movie():
     movie_id= request.args.get('id')
     if movie_id:
         #A linguagem escolhida foi portugues mas pode ser selecionada outra linguagem como inglês
-        response= requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}', params={'api_key': 'f49c37daac434354e7db8f0537ff98fa', "language": "pt-br"})
+        response= requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}', params={'api_key': 'MY_API_KEY', "language": "pt-br"})
         data= response.json()
         #Adicionaremos o novo filme para a nossa database
         new_movie= Movie(
