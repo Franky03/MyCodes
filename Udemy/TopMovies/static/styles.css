@@ -212,3 +212,8 @@
  .release_date {
 	 font-weight: normal;
 }
+
+.card{
+	float: left;
+	margin: 1%;
+}

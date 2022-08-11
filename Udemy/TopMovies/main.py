@@ -45,9 +45,11 @@ class AddMovie(FlaskForm):
 
 @app.route("/")
 def home():
-    all_movies= Movie.query.order_by(desc(Movie.rating)).all()
+    #Ordenei a lista da database por ordem decrescente de rating, que vai ser ordem crescente do ranking
+    all_movies= Movie.query.order_by(desc(Movie.rating)).all() 
+    #Depois coloquei os rankings de acordo com a lista ordenada
     for index in range(len(all_movies)):
-        all_movies[index].ranking= index + 1
+        all_movies[index].ranking= index + 1 
     
     db.session.commit()
 
@@ -56,8 +58,11 @@ def home():
 @app.route('/edit', methods= ['GET', 'POST'])
 def edit():
     form= UpdateMovie()
+    #Peguei o id do filme que vai ser atualizado pelo url_for do index
     movie_id= request.args.get('id')
-    movie_selected= Movie.query.get(movie_id)
+    #Movie selecionado foi pego pelo metodo query usando o id
+    movie_selected= Movie.query.get(movie_id) 
+    #Depois é só atualizar o rating e o review se forem passados, respectivamente
     if form.validate_on_submit():
         if form.new_rating.data != '':
             movie_selected.rating= float(form.new_rating.data)
@@ -70,6 +75,7 @@ def edit():
 
 @app.route('/delete')
 def delete():
+    #Aqui eu criei uma rota para deletar, não necessáriamente precisa de um arquivo html para ser renderizado
     movie_id= request.args.get('id')
     movie_selected= Movie.query.get(movie_id)
     db.session.delete(movie_selected)
@@ -79,20 +85,25 @@ def delete():
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     form= AddMovie()
+    #Nessa página será adicionado um novo filme, aparecerá uma lista de possiveis filmes que o cliente irá pesquisar
     if form.validate_on_submit():
         movie_title= form.title.data
+        #usando a api do the movie db
         response= requests.get('https://api.themoviedb.org/3/search/movie', params={'api_key': 'f49c37daac434354e7db8f0537ff98fa', 'query': movie_title, 'include_adult': True})
         data= response.json()['results']
+        #É nessa parte que será renderizado uma nova página, a de seleção dos filmes encontrados da api
         return render_template('select.html', data=data)
     return render_template('add.html', form=form)
 
 @app.route('/find')
 def find_movie():
+    #Aqui é usado um outro json mas com a mesma api, só que dessa vez é com o filme que o cliente escolheu, a api irá pegar os dados do filme
     movie_id= request.args.get('id')
     if movie_id:
+        #A linguagem escolhida foi portugues mas pode ser selecionada outra linguagem como inglês
         response= requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}', params={'api_key': 'f49c37daac434354e7db8f0537ff98fa', "language": "pt-br"})
         data= response.json()
-        
+        #Adicionaremos o novo filme para a nossa database
         new_movie= Movie(
             title= data['title'],
             year= data['release_date'].split('-')[0],
