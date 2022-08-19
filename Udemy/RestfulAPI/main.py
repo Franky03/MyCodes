@@ -7,6 +7,7 @@ app = Flask(__name__)
 ##Connect to Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+API_KEY= "m34drt6Urdc"
 db = SQLAlchemy(app)
 
 
@@ -32,10 +33,9 @@ class Cafe(db.Model):
             dict[column.name]= getattr(self, column.name)
         return dict
 
-
-
 db.create_all()
 
+## HTTP GET - Read Record
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -63,6 +63,8 @@ def search():
         return jsonify(cafe= cafe.goto_dict())
     return jsonify(error={"Not Found": "Sorry, we don't have a cafe at that location."})
 
+## HTTP POST - Create Record
+
 @app.route("/add", methods= ["POST"])
 def add():
     new_cafe= Cafe(
@@ -80,13 +82,36 @@ def add():
     db.session.add(new_cafe)
     db.session.commit()
     return jsonify(response= {"success": "Successfully added the new cafe."})
-## HTTP GET - Read Record
-
-## HTTP POST - Create Record
 
 ## HTTP PUT/PATCH - Update Record
 
+@app.route("/update-price/<int:cafe_id>", methods=["GET", "POST", "PATCH"]) #Metodo PATCH not alowed, tem que ser POST aparentemente
+def update(cafe_id):
+    cafe= Cafe.query.filter_by(id=cafe_id).first()
+    new_price= request.args.get("new_price")
+    if cafe:
+        cafe.coffee_price= new_price
+        db.session.commit()
+        return jsonify(response= {"success": "Successfully added the new cafe."}), 200
+    #404 quando não for encontrado o café na database
+    return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."}), 404
+    
 ## HTTP DELETE - Delete Record
+
+@app.route("/report-closed/<int:cafe_id>", methods= ["GET", "POST", "DELETE"])
+def delete(cafe_id):
+    api_key= request.args.get("api_key")
+    if api_key== API_KEY:
+        cafe= Cafe.query.filter_by(id=cafe_id).first()
+        if cafe:
+            db.session.delete(cafe)
+            db.session.commit()
+            #Se a chave estiver certa e o cafe for encontrado, então vai ser deletado com sucesso
+            return jsonify(response={"success": "Successfully deleted the cafe from the database."}), 200
+        #Se a chave estiver certa mas o cafe não for encontrado, então vai dar erro de cafe não encontrado
+        return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."}), 404
+    #Se a chave estiver errada, então vai dar erro de chave
+    return jsonify(error={"Forbidden": "Sorry, that's not allowed. Make sure you have the correct api_key."}), 403
 
 
 if __name__ == '__main__':
