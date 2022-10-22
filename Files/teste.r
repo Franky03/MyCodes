@@ -1,0 +1,10 @@
+install.packages("devtools")
+devtools::install_github("JaseZiv/worldfootballR")
+library(worldfootballR)
+install.packages("dplyr")
+library(dplyr)
+install.packages("tidyr")
+library(tidyr)
+
+RealMadrid_Transfers <- tm_team_transfers(team_url = "https://www.transfermarkt.com/real-madrid/startseite/verein/418", transfer_window = "all")
+write.csv(RealMadrid_Transfers, "C:/Users/kaiky/Downloads/TesteMadrid.csv")
