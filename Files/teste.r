@@ -6,5 +6,6 @@ library(dplyr)
 install.packages("tidyr")
 library(tidyr)
 
-RealMadrid_Transfers <- tm_team_transfers(team_url = "https://www.transfermarkt.com/real-madrid/startseite/verein/418", transfer_window = "all")
-write.csv(RealMadrid_Transfers, "C:/Users/kaiky/Downloads/TesteMadrid.csv")
+Messi <- understat_player_shots(player_url = "https://understat.com/player/2097")
+
+View(Messi)
