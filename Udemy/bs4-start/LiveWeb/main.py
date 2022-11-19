@@ -12,18 +12,20 @@ response= requests.get("https://news.ycombinator.com/newest")
 
 contents= response.text
 
+
 soup= BeautifulSoup(contents, "lxml")
+print(soup)
 anchor= soup.find_all(name="a", class_='titlelink')
 upvote= soup.find_all(name="span", class_='score')
-# for c in range(0, len(anchor)):
-#     print("-="*20)
-#     print(f"{anchor[c].getText()}\n {anchor[c].get('href')} ")
-#     print(upvote[c].getText().split()[0])
+for c in range(0, len(anchor)):
+    print("-="*20)
+    print(f"{anchor[c].getText()}\n {anchor[c].get('href')} ")
+    print(upvote[c].getText().split()[0])
 
-title_list=[title.getText() for title in anchor]
-links= [link.get('href') for link in anchor]
-scores= [int(up.getText().split()[0]) for up in upvote]
+# title_list=[title.getText() for title in anchor]
+# links= [link.get('href') for link in anchor]
+# scores= [int(up.getText().split()[0]) for up in upvote]
 
-max_score= max(scores) 
-index= scores.index(max_score)
-print(f"{title_list[index]}\n{links[index]}\n{max_score}")
+# max_score= max(scores) 
+# index= scores.index(max_score)
+# print(f"{title_list[index]}\n{links[index]}\n{max_score}")

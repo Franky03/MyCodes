@@ -1,29 +1,68 @@
+from time import sleep
+from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-import time
+import csv
 
-chrome_driver_path= "C:\Development\chromedriver.exe"
-driver= webdriver.Chrome(ChromeDriverManager().install(), options= None)
+class MakeTable():
 
-driver.get("https://www.eloratings.net/")
-driver.maximize_window()
+    def __init__(self, url):
+        self.site= url
+        self.cells= False
+        self.string1= []
+        self.soup= None
+        self.colls= None
 
-time.sleep(3)
+    def get_content(self):
 
-columns= driver.find_element(By.ID, 'itemdropdownColumns')
-columns.click()
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
 
-time.sleep(2)
+        driver= webdriver.Chrome(ChromeDriverManager().install(), options= None)
+        driver.get(self.site)
+        sleep(1)
+        driver.maximize_window()
+        sleep(5)
+        response= driver.page_source
+        self.soup= BeautifulSoup(response, 'html.parser')
 
-cols= ['//*[@id="itemgrouphighest"]/span', '//*[@id="itemgrouplowest"]/span', 
-'//*[@id="itemgroupchange3m"]/span', '//*[@id="itemgroupchange6m"]/span', '//*[@id="itemgroupchange2y"]/span', 
-'//*[@id="itemgroupchange5y"]/span', '//*[@id="itemgroupchange10y"]/span']
+        driver.quit()
 
-for _id in cols:
-    time.sleep(3)
-    to_click= driver.find_element(By.XPATH, _id)
-    time.sleep(3)
-    to_click.click()
+        self.cells= self.soup.find_all('div', {'class': 'slick-cell'})
+    
 
-print('Done')
+    def to_csv(self):
+        try:
+            with open('./table.csv', 'w', encoding="utf-8", newline='') as file:
+                row=[]
+                for c in range(len(self.cells)):
+                    word= self.cells[c].getText()
+                    if c % 16 != 0:
+                        row.append(word)
+                    if c<=16:
+                        if (c!=0 and c % 15 == 0):
+                            self.string1.append(row)
+                            row=[]
+                    else:
+                        if (c % 16 == 0):
+                            self.string1.append(row)
+                            row=[]
+                
+
+                writer= csv.writer(file)
+                writer.writerows(self.string1)
+                print(self.string1)
+        except Exception as e:
+            print(e)
+    
+    def run(self):
+        self.get_content()
+        self.to_csv()
+
+        return True
+    
+    def get_goals(self):
+        self.soup.find_all('div', {'class': ''})
+
+mt= MakeTable("https://www.eloratings.net/")
+mt.run()
