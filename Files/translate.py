@@ -8,7 +8,7 @@ TRANSLATE_BASE_URL= 'https://google-translate1.p.rapidapi.com/language/translate
 
 HEADERS= {
     'x-rapidapi-host': "google-translate1.p.rapidapi.com",
-    'x-rapidapi-key': '2f71864143msh7f3b1c469001d71p1b9b77jsnacca71055d11',
+    'x-rapidapi-key': '',
     'content-type': "application/x-www-form-urlencoded"
 }
 
