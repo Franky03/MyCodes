@@ -30,7 +30,8 @@ class Movie(db.Model):
     def __repr__(self):
         return f'<Book {self.title}>'
 
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 class UpdateMovie(FlaskForm):
     new_rating= StringField(label='Your Rating Out of 10 e.g. 7.5')
