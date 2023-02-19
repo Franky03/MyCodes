@@ -11,7 +11,7 @@ cap = cv2.VideoCapture(-1)
 cap.set(3, wCam)
 cap.set(4, hCam)
 
-folder = "./images"
+folder = "./Computer Vision/FingerCounter/images"
 myList = os.listdir(folder)
 myList.sort()
 print(myList)
