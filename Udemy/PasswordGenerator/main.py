@@ -64,16 +64,16 @@ def save():
 
             if is_ok:
                 try:
-                    with open('./Udemy/PasswordGenerator/data.json','r') as file:
+                    with open('./data.json','r') as file:
                         data= json.load(file)
                     
                 except FileNotFoundError:
-                    with open('./Udemy/PasswordGenerator/data.json', 'w') as file:
+                    with open('./data.json', 'w') as file:
                         json.dump(new_data, file, indent=4)
                 else:
                     data.update(new_data)
 
-                    with open('./Udemy/PasswordGenerator/data.json', mode='w') as file:    
+                    with open('./data.json', mode='w') as file:    
                         json.dump(data, file, indent=4)
                         
                 finally:        
@@ -89,7 +89,7 @@ def save():
 def search_web():
     website= web_input.get()
     try:
-        with open('./Udemy/PasswordGenerator/data.json', mode='r') as file:
+        with open('./data.json', mode='r') as file:
             data= json.load(file)
     except FileNotFoundError:
         messagebox.showinfo(title='Oops', message='No Data File Found.')
@@ -109,7 +109,7 @@ window= Tk()
 window.title('Password Manager')
 
 window.config(padx=50, pady=50)
-image= PhotoImage(file='./Udemy/PasswordGenerator/logo.png')
+image= PhotoImage(file='./logo.png')
 canvas= Canvas(width=200,height=200, highlightthickness=0)
 canvas.create_image(100,100, image= image)
 canvas.grid(column=1, row=0)

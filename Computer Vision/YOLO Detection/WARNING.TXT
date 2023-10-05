@@ -1,1 +1,0 @@
-O model salvo do yolo não foi para o commit devido ao tamanho do arquivo
